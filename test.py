@@ -64,4 +64,52 @@ while count<5:
 for num in ages:
 	print num
 
+# function definition
+def mysum (arg1, arg2):
+	return arg1+arg2
 
+print ("The sum of " + str(val1) + " and " + str(val2) + " is " + str(mysum(val1,val2)))
+
+def mysum2 (arg1=0,arg2=0):
+	return arg1+arg2*arg2
+
+
+print ("The sum of <default>  and  <default> squared is " + str(mysum2()))
+print ("The sum of 2  and  <default> squared is " + str(mysum2(2)))
+print ("The sum of <default>  and  2 squared  is " + str(mysum2(arg2=2)))
+print ("The sum of 2  and  2 squared  is " + str(mysum2(2,2)))
+
+# Variable argument length
+def mysum3(arg1, *arg2):
+	sum=arg1
+	for num in arg2:
+		sum+=num
+	return sum
+
+print ("The sum of 1,2,3 is: " + str(mysum3(1,2,3)))
+
+# class definition
+# Note that all member functions require at least the "self" argument as the *first* argument
+
+class person:
+	def __init__(self, id):
+		self.firstName="defaultFirst"
+		self.lastName="defaultLast"
+		self.id=id;
+	def __del__(self):
+		self.printMe()
+		print(".. is destroyed")
+	def setName(self, fName, lName):
+		self.firstName=fName
+		self.lastName=lName
+	def printMe(self):
+		print(str(self.id) + " " + self.firstName + " " + self.lastName)
+
+Kerim = person(1)
+
+# Note that the "self" argument is implicit
+Kerim.printMe()
+Kerim.setName("Kerim", "Kalafala")
+Kerim.printMe()
+
+# Destructor gets called automatically when Kerim goes out of scope
