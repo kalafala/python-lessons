@@ -50,7 +50,7 @@ if val1>0:
 	if val2>0:
 		print ("val2 " + str(val2) + " is greater than zero")
 	else:
-		print ("val2" + str(val1) + " is less than or equal to zero")
+		print ("val2 " + str(val2) + " is less than or equal to zero")
 	print ("end of if")
 elif val1==0:
 	print ("val1 " + str(val1) + " is equal to zero")
